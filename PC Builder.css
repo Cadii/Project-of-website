@@ -1,0 +1,355 @@
+/* Start Variables */
+:root{
+    --main-color: #10cab7;
+    --secondary-color: #2c4755;
+    --section-padding: 60px;
+    --section-background: #f6f6f6;
+}
+/* End Variables */
+/* Start Global Rules */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+}
+.parent{
+    background-color: #eee;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left:auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container{
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container{
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container{
+        width: 1170px;
+    }
+}
+/* End Global Rules */
+/* Start Header */
+.header{
+    padding: 20px;
+    border-bottom: 3px solid #10cab7;
+    background-color: #eee;
+}
+
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 100%; */
+}
+
+.header .logo{
+    width: 150px;
+}
+
+.header .links{
+    position: relative;
+}
+
+.header .links .icon{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.header .links .icon span{
+    background-color: #333;
+    margin-bottom: 5px ;
+    height: 2px;
+}
+
+.header .links .icon span:first-child{
+    width: 100%;
+}
+
+.header .links .icon span:nth-child(2){
+    width: 60%;
+    transition: 0.3s;
+}
+
+.header .links:hover .icon span:nth-child(2){
+    width: 100%;
+}
+
+.header .links .icon span:last-child{
+    width: 100%;
+}
+
+.header .links ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+    right: 0;
+    position: absolute;
+    min-width: 200px;
+    top: calc(100% + 15px);
+    display: none;
+    z-index: 1;
+}
+
+.header .links:hover ul{
+    display: block;
+}
+
+.header .links ul::before {
+    content: "";
+    border-width: 10px ;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent ;
+    position: absolute;
+    right: 5px;
+    top: -20px;
+}
+
+.header .links ul li a{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+}
+
+.header .links ul li a:hover{
+    padding-left: 25px;
+}
+
+.header .links ul li:not(:last-child) a{
+    border: 1px solid #ddd;
+}
+/* End Header */
+/* Start Body */
+/* Start login and register */
+.user{
+    text-align: right;
+    padding: 10px;
+}
+
+.login,.register{
+    text-decoration: none;
+    text-align: right;
+    line-height: 1.8;
+    color: white;
+    left: 0;
+    font-size: 20px;
+    padding: 10px;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.register:hover{
+    padding-left: 20px;
+}
+
+.login:hover{
+    padding-left: 20px;
+}
+/* End Login and Register */
+.components{
+    background-color: #2c4755;
+    height: 700px;
+    border-bottom: 4px solid var(--main-color);
+}
+
+.components h1{
+    color: #eee;
+    text-align: center;
+}
+
+.cpu{
+    background-color: var(--main-color);
+    width: 400px;
+    padding: 10px;
+    margin-left: 190px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.cpu:hover{
+    border: 2px solid #eee;
+}
+
+.cpu h2,
+.gpu h2,
+.motherboard h2{
+    color: white;
+}
+.components .images{
+    width: 300px;
+    height: 300px;
+    margin-left: 37px;
+}
+.gpu{
+    background-color: var(--main-color);
+    width: 400px;
+    padding: 10px;
+    margin-left: 645px;
+    border-radius: 10px;
+    margin-top: -426px;
+    transition: 0.3s;
+}
+
+.gpu:hover{
+    border: 2px solid #eee;
+}
+
+.motherboard{
+    background-color: var(--main-color);
+    width: 400px;
+    padding: 10px;
+    margin-left: 1100px;
+    border-radius: 10px;
+    margin-top: -425px;
+    transition: 0.3s;
+}
+
+.motherboard:hover{
+    border: 2px solid #eee;
+}
+/* End of fisrt method */
+/* Start of Build Guides */
+.landing{
+    background-color: #eee;
+    height: 450px;
+    position: relative;
+    border-bottom: 3px solid var(--main-color);
+}
+
+.landing .buildguides{
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    text-align: center;
+    width: 400px;
+    max-width: 100%;
+    background-color: var(--secondary-color);
+    padding: 10px;
+    margin-left: 50px;
+    height: 350px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.buildguides:hover{
+    border: 2px solid var(--main-color);
+}
+
+.landing .buildguides h1,
+.landing .builder h1,
+.landing .completed_builds h1{
+    margin: 0;
+    font-weight: bold;
+    font-size: 50px;
+    color: #eee;
+}
+
+.landing .buildguides p,
+.landing .builder p,
+.landing .completed_builds p{
+    font-size: 19px;
+    line-height: 1.8;
+    color: var(--main-color);
+    text-align: left;
+    margin-left: 10px;
+}
+
+.landing .buildguides a,
+.landing .builder a,
+.landing .completed_builds a{
+    width: 50px;
+    height: 50px;
+    background-color: var(--main-color);
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+} 
+
+.landing .builder{
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    text-align: center;
+    width: 400px;
+    max-width: 100%;
+    background-color: var(--secondary-color);
+    padding: 10px;
+    margin-left: 690px;
+    height: 350px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.builder:hover{
+    border: 2px solid var(--main-color);
+}
+
+.landing .completed_builds{
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    text-align: center;
+    width: 400px;
+    max-width: 100%;
+    background-color: var(--secondary-color);
+    padding: 10px;
+    margin-left: 1300px;
+    height: 350px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.completed_builds:hover{
+    border: 2px solid var(--main-color);
+}
+/* End of Build Guides */
+/* End Body */
+/* Start Footer */
+.footer{
+    background-color: var(--secondary-color);
+    height: 200px;
+    margin-top: -22px;
+}
+
+.footer h1{
+    color: #eee;
+    margin-left: 590px;
+    padding: 20px;
+}
+
+.email{
+    color: #eee;
+    text-decoration: none;
+    margin: 735px; 
+}
+
+.para_last{
+    color: #eee;
+    text-align: center;
+}
+/* End Footer */
